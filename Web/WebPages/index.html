@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	网上书店
+</title><link href="css/global.css" rel="stylesheet" />
+<link href="css/layout.css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" />
+<link href="css/focuspic.css" rel="stylesheet" />
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/focus.js"></script>
+</head>
+<body onload="startclock();">
+    <form method="post" action="./Index.html" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+        <div id="header">
+            
+<link href="css/global.css" rel="stylesheet" />
+<link href="css/layout.css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" />
+<link href="css/focus.css" rel="stylesheet" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/public.js"></script>
+<script type="text/javascript">
+    function displaySubMenu(li) {
+        //var subMenu = li.getElementsByTagName("ul")[0];
+        var subMenu = document.getElementById("category");
+        subMenu.style.display = "block";
+    }
+    function hideSubMenu(li) {
+        //var subMenu = li.getElementsByTagName("ul")[0];
+        var subMenu = document.getElementById("category");
+        subMenu.style.display = "none";
+    }
+</script>
+<div class="header_top">
+    <div class="header_top_left">
+        <span id="header1_lblUser" style="color:Red;"></span>
+        您好,欢迎光临! [ <a href="UserLogin.html" id="header1_show" target="_parent">登录 |</a> <a href="UserRegister.html">免费注册 </a>]
+                       <span>&nbsp;<label id="lblTime" style="color: red;"></label></span>
+    </div>
+    <div class="header_top_right">
+        <ul>
+            <li><a href="#" target="_self">帮助</a></li>
+            <li>|</li>
+            <li><a href="javascript:void(0)" onclick="SetHome(this,window.location)">收藏本站</a></li>
+            <li>|</li>
+            <li><a href="javascript:void(0)" onclick="shoucang(document.title,window.location)">设为首页</a></li>
+            <li>|</li>
+            <li><a href="UserRoom.html" target="_blank">个人中心</a></li>
+            <li>|</li>
+            <li><a href="BookCar.html">购物车</a></li>
+            <li>
+                <img src="img/dd_header_shop.gif" alt="shopping" /></li>
+        </ul>
+    </div>
+</div>
+<div class="header_search">
+    <div class="logo">
+        <ul>
+            <li><a href="Index.html">
+                <img src="img/logo3.jpg" /></a></li>
+            <li class="logo_tel">
+                <img src="img/bg_01.gif" /></li>
+        </ul>
+    </div>
+    <div class="search">
+        <div class="search_area">
+            <input type="submit" name="header1$btnSearch" value="搜 索" id="header1_btnSearch" class="btn_search" />
+            <div class="search_select">
+                <span class="icon-search"></span>
+            </div>
+            <input name="header1$txtKeyword" type="text" id="header1_txtKeyword" value="请输入搜索图书内容" data-default="请输入搜索图书内容" onblur="checkInputBlur($(this))" onfocus="checkInputFocus($(this))" class="search_input" />
+        </div>
+    </div>
+</div>
+<div id="nav" class="nav">
+    
+    <div class='nav_main'>
+        <ul id="navigation">
+            <li><a href="Index.html" class="current"><img  src="img/home142.png" style=" width:auto; height:12px"/> 首 页</a></li>
+            <li onmouseover="displaySubMenu()" onmouseout="hideSubMenu()">
+               <a>图书分类 <img  src="img/thumbnails.png" style=" width:auto; height:12px"/></a> 
+                <ul id="category">
+                    <table id="header1_dlCate" cellspacing="0" style="border-collapse:collapse;">
+	<tr>
+		<td>
+                            <div class="book_cate">
+                                <li><a href='CategoryList.html?categoryId=1'>
+                                    C#高级编程1</a></li>
+                            </div>
+                        </td><td>
+                            <div class="book_cate">
+                                <li><a href='CategoryList.html?categoryId=15'>
+                                    C C+</a></li>
+                            </div>
+                        </td><td>
+                            <div class="book_cate">
+                                <li><a href='CategoryList.html?categoryId=16'>
+                                    VB Script</a></li>
+                            </div>
+                        </td>
+	</tr><tr>
+		<td>
+                            <div class="book_cate">
+                                <li><a href='CategoryList.html?categoryId=17'>
+                                    计算机等级考试1</a></li>
+                            </div>
+                        </td><td>
+                            <div class="book_cate">
+                                <li><a href='CategoryList.html?categoryId=20'>
+                                    计算机理论</a></li>
+                            </div>
+                        </td><td>
+                            <div class="book_cate">
+                                <li><a href='CategoryList.html?categoryId=21'>
+                                    Java </a></li>
+                            </div>
+                        </td>
+	</tr><tr>
+		<td>
+                            <div class="book_cate">
+                                <li><a href='CategoryList.html?categoryId=22'>
+                                    HTML XML</a></li>
+                            </div>
+                        </td><td>
+                            <div class="book_cate">
+                                <li><a href='CategoryList.html?categoryId=25'>
+                                    .NET</a></li>
+                            </div>
+                        </td><td>
+                            <div class="book_cate">
+                                <li><a href='CategoryList.html?categoryId=27'>
+                                    网站开发</a></li>
+                            </div>
+                        </td>
+	</tr><tr>
+		<td>
+                            <div class="book_cate">
+                                <li><a href='CategoryList.html?categoryId=29'>
+                                    ASP.NET</a></li>
+                            </div>
+                        </td><td>
+                            <div class="book_cate">
+                                <li><a href='CategoryList.html?categoryId=31'>
+                                    JSP</a></li>
+                            </div>
+                        </td><td>
+                            <div class="book_cate">
+                                <li><a href='CategoryList.html?categoryId=38'>
+                                    电子商务</a></li>
+                            </div>
+                        </td>
+	</tr>
+</table>
+                </ul>
+
+            </li>
+            <li> <a href="BookList.html">所有图书</a></li>
+            <li><a href="BookList.html?type=1">新书上架</a></li>
+            <li><a href="BookList.html?type=2">特价图书</a></li>
+            <li><a href="#">图书资讯</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+        <span class='icon_hot'></span>
+    </div>
+</div>
+
+        </div>
+        <!--网站中间内容开始-->
+        <div id="main">
+            <div class="main_first">
+                <!--左侧菜单开始-->
+                
+                <!--滚动图片开始-->
+                
+                <div id="box">
+                    <ul id="list">
+                        <li><a href="#">
+                            <img style="width: 620px; height: 300px" src="img/book1.jpg" /></a></li>
+                        <li><a href="#">
+                            <img style="width: 620px; height: 300px" src="img/book2.jpeg" /></a></li>
+                        <li><a href="#">
+                            <img style="width: 620px; height: 300px" src="img/book3.jpg" /></a></li>
+                        <li><a href="#">
+                            <img style="width: 620px; height: 300px" src="img/book4.jpg" /></a></li>
+                        <li><a href="#">
+                            <img style="width: 620px; height: 300px" src="img/book5.jpg" /></a></li>
+                    </ul>
+                    <ul id="num">
+                        <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                </div>
+                <!--右侧新闻开始-->
+                <div id="silder">
+                    <div class="news_list">
+                        <div class="news_list_bg">
+                            <img src="img/dd_book_cate_icon.gif" alt="新闻" />
+                            图书资讯
+                            <a href="#" style="float: right; font-size: 12px; color: white">更多>></a>
+                        </div>
+                        <div class="new_content">
+                            <ul>
+                                <li><a href="#">ASP.NET最新版图书，召开新闻发布会</a> <span>2016-07-12</span></li>
+                                <li><a href="#">微软公司发布VS2017，用户纷纷点赞</a> <span>2016-06-16</span></li>
+                                <li><a href="#">ASP.NET最新版图书，召开新闻发布会</a> <span>2016-05-01</span></li>
+                                <li><a href="#">微软公司发布VS2017，用户纷纷点赞</a> <span>2016-04-22</span></li>
+                                <li><a href="#">ASP.NET最新版图书，召开新闻发布会</a> <span>2016-04-18</span></li>
+                                <li><a href="#">微软公司发布VS2017，用户纷纷点赞</a> <span>2016-03-04</span></li>
+                                <li><a href="#">ASP.NET最新版图书，召开新闻发布会</a> <span>2016-03-04</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_second">
+                <div class="main_second_left">
+                    <div class="book_sort">
+                        <div class="book_new">
+                            <div class="book_left">最新上架</div>
+                            <div class="book_right"><a href="BookList.html?type=1">更多>></a></div>
+                        </div>
+
+                        <div class="book_class">
+                            <table id="dlNewsBook" cellspacing="0" cellpadding="4" align="Center" rules="rows" style="color:Black;background-color:White;border-color:#CCCCCC;border-width:1px;border-style:None;border-collapse:collapse;">
+	<tr>
+		<td>
+                                    <dl id="bookNew">
+                                        <dt>
+                                            <img style="width: 80px; height: 100px" src='img/BookCovers/20161212461.jpg' alt="" />
+                                        </dt>
+                                        <dd>
+                                            <a href='BookDetails.html?bookId=6091'> <span class="book_title">ASP.NET MV...</span></a>
+                                            <br />
+                                            <span class="book_publish">出版日期:2016年12月26日</span><br /><span style="color: red; font-weight: bold">价格：¥100.00元</span>
+                                        </dd>
+                                    </dl>
+                                    </div>
+                                </td><td>
+                                    <dl id="bookNew">
+                                        <dt>
+                                            <img style="width: 80px; height: 100px" src='img/BookCovers/9787302085751.jpg' alt="" />
+                                        </dt>
+                                        <dd>
+                                            <a href='BookDetails.html?bookId=5019'> <span class="book_title">C++语言程序设计<...</span></a>
+                                            <br />
+                                            <span class="book_publish">出版日期:2012年06月10日</span><br /><span style="color: red; font-weight: bold">价格：¥18.00元</span>
+                                        </dd>
+                                    </dl>
+                                    </div>
+                                </td><td>
+                                    <dl id="bookNew">
+                                        <dt>
+                                            <img style="width: 80px; height: 100px" src='img//BookCovers/9787115137531.jpg' alt="" />
+                                        </dt>
+                                        <dd>
+                                            <a href='BookDetails.html?bookId=5020'> <span class="book_title">Visual C++...</span></a>
+                                            <br />
+                                            <span class="book_publish">出版日期:2012年06月10日</span><br /><span style="color: red; font-weight: bold">价格：¥42.00元</span>
+                                        </dd>
+                                    </dl>
+                                    </div>
+                                </td>
+	</tr><tr>
+		<td>
+                                    <dl id="bookNew">
+                                        <dt>
+                                            <img style="width: 80px; height: 100px" src='img//BookCovers/9787302146933.jpg' alt="" />
+                                        </dt>
+                                        <dd>
+                                            <a href='BookDetails.html?bookId=5493'> <span class="book_title">HTML&XHTML...</span></a>
+                                            <br />
+                                            <span class="book_publish">出版日期:2012年06月10日</span><br /><span style="color: red; font-weight: bold">价格：¥75.00元</span>
+                                        </dd>
+                                    </dl>
+                                    </div>
+                                </td><td>
+                                    <dl id="bookNew">
+                                        <dt>
+                                            <img style="width: 80px; height: 100px" src='../Images/BookCovers/9787030193421.jpg' alt="" />
+                                        </dt>
+                                        <dd>
+                                            <a href='BookDetails.html?bookId=5253'> <span class="book_title">CSS网站布局实录：...</span></a>
+                                            <br />
+                                            <span class="book_publish">出版日期:2007年09月01日</span><br /><span style="color: red; font-weight: bold">价格：¥39.00元</span>
+                                        </dd>
+                                    </dl>
+                                    </div>
+                                </td><td>
+                                    <dl id="bookNew">
+                                        <dt>
+                                            <img style="width: 80px; height: 100px" src='img//BookCovers/9787115165367.jpg' alt="" />
+                                        </dt>
+                                        <dd>
+                                            <a href='BookDetails.html?bookId=5279'> <span class="book_title">精通Web标准建站:...</span></a>
+                                            <br />
+                                            <span class="book_publish">出版日期:2007年09月01日</span><br /><span style="color: red; font-weight: bold">价格：¥55.00元</span>
+                                        </dd>
+                                    </dl>
+                                    </div>
+                                </td>
+	</tr><tr>
+		<td>
+                                    <dl id="bookNew">
+                                        <dt>
+                                            <img style="width: 80px; height: 100px" src='img/BookCovers/9787115163592.jpg' alt="" />
+                                        </dt>
+                                        <dd>
+                                            <a href='BookDetails.html?bookId=5860'> <span class="book_title">JavaScript...</span></a>
+                                            <br />
+                                            <span class="book_publish">出版日期:2007年09月01日</span><br /><span style="color: red; font-weight: bold">价格：¥45.00元</span>
+                                        </dd>
+                                    </dl>
+                                    </div>
+                                </td><td>
+                                    <dl id="bookNew">
+                                        <dt>
+                                            <img style="width: 80px; height: 100px" src='img/BookCovers/9787508448176.jpg' alt="" />
+                                        </dt>
+                                        <dd>
+                                            <a href='BookDetails.html?bookId=6073'> <span class="book_title">二级Visual B...</span></a>
+                                            <br />
+                                            <span class="book_publish">出版日期:2007年08月20日</span><br /><span style="color: red; font-weight: bold">价格：¥24.00元</span>
+                                        </dd>
+                                    </dl>
+                                    </div>
+                                </td><td>
+                                    <dl id="bookNew">
+                                        <dt>
+                                            <img style="width: 80px; height: 100px" src='img/BookCovers/9787115162304.jpg' alt="" />
+                                        </dt>
+                                        <dd>
+                                            <a href='BookDetails.html?bookId=5041'> <span class="book_title">嵌入式Linux C...</span></a>
+                                            <br />
+                                            <span class="book_publish">出版日期:2007年08月01日</span><br /><span style="color: red; font-weight: bold">价格：¥49.00元</span>
+                                        </dd>
+                                    </dl>
+                                    </div>
+                                </td>
+	</tr>
+</table>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_second_right">
+                    <div class="main_second_left">
+                        <div class="book_sort">
+                            <div class="book_new">
+                                <div class="book_left">特价图书</div>
+                                <div class="book_right"><a href="BookList.html?type=2">更多>></a></div>
+                            </div>
+                            <div id="bookList1">
+                                <table id="dlSpecialBook" cellspacing="0" cellpadding="4" align="Center" rules="rows" style="color:Black;background-color:White;border-color:#CCCCCC;border-width:1px;border-style:None;border-collapse:collapse;">
+	<tr>
+		<td>
+                                        <dl id="bookNew">
+                                            <dt>
+                                               <img style="width: 80px; height: 100px" src='img/BookCovers/9787313024855.jpg' alt="" /></a>
+                                            </dt>
+                                            <dd>
+                                                <a href='BookDetails.html?bookId=5514'> <span class="book_title">网页制作语言——HT...</span></a>
+                                                <br />
+                                                <span class="book_publish">出版日期:2000年07月01日</span><br /><span style="color: red; font-weight: bold">价格：¥5.00元</span></dd>
+                                        </dl>
+                                    </td><td>
+                                        <dl id="bookNew">
+                                            <dt>
+                                               <img style="width: 80px; height: 100px" src='img/BookCovers/9787313024787.jpg' alt="" /></a>
+                                            </dt>
+                                            <dd>
+                                                <a href='BookDetails.html?bookId=5844'> <span class="book_title">动态网页制作——Ja...</span></a>
+                                                <br />
+                                                <span class="book_publish">出版日期:2002年01月01日</span><br /><span style="color: red; font-weight: bold">价格：¥5.00元</span></dd>
+                                        </dl>
+                                    </td><td>
+                                        <dl id="bookNew">
+                                            <dt>
+                                               <img style="width: 80px; height: 100px" src='img/BookCovers/9787115149046.jpg' alt="" /></a>
+                                            </dt>
+                                            <dd>
+                                                <a href='BookDetails.html?bookId=6001'> <span class="book_title">全国计算机等级考试历...</span></a>
+                                                <br />
+                                                <span class="book_publish">出版日期:2006年07月01日</span><br /><span style="color: red; font-weight: bold">价格：¥10.00元</span></dd>
+                                        </dl>
+                                    </td>
+	</tr><tr>
+		<td>
+                                        <dl id="bookNew">
+                                            <dt>
+                                               <img style="width: 80px; height: 100px" src='img/ookCovers/9787115121585.jpg' alt="" /></a>
+                                            </dt>
+                                            <dd>
+                                                <a href='BookDetails.html?bookId=5985'> <span class="book_title">可视化编程应用——V...</span></a>
+                                                <br />
+                                                <span class="book_publish">出版日期:2004年06月01日</span><br /><span style="color: red; font-weight: bold">价格：¥12.00元</span></dd>
+                                        </dl>
+                                    </td><td>
+                                        <dl id="bookNew">
+                                            <dt>
+                                               <img style="width: 80px; height: 100px" src='img/BookCovers/9787120000196.jpg' alt="" /></a>
+                                            </dt>
+                                            <dd>
+                                                <a href='BookDetails.html?bookId=6023'> <span class="book_title">Visual Bas...</span></a>
+                                                <br />
+                                                <span class="book_publish">出版日期:2004年07月01日</span><br /><span style="color: red; font-weight: bold">价格：¥13.00元</span></dd>
+                                        </dl>
+                                    </td><td>
+                                        <dl id="bookNew">
+                                            <dt>
+                                               <img style="width: 80px; height: 100px" src='img/BookCovers/9787111098935.jpg' alt="" /></a>
+                                            </dt>
+                                            <dd>
+                                                <a href='BookDetails.html?bookId=5983'> <span class="book_title">Visual Bas...</span></a>
+                                                <br />
+                                                <span class="book_publish">出版日期:2002年02月01日</span><br /><span style="color: red; font-weight: bold">价格：¥14.00元</span></dd>
+                                        </dl>
+                                    </td>
+	</tr><tr>
+		<td>
+                                        <dl id="bookNew">
+                                            <dt>
+                                               <img style="width: 80px; height: 100px" src='img/BookCovers/9787111129431.jpg' alt="" /></a>
+                                            </dt>
+                                            <dd>
+                                                <a href='BookDetails.html?bookId=4959'> <span class="book_title">C程序设计语言（第2...</span></a>
+                                                <br />
+                                                <span class="book_publish">出版日期:2004年01月01日</span><br /><span style="color: red; font-weight: bold">价格：¥15.00元</span></dd>
+                                        </dl>
+                                    </td><td>
+                                        <dl id="bookNew">
+                                            <dt>
+                                               <img style="width: 80px; height: 100px" src='img/BookCovers/9787560928906.jpg' alt="" /></a>
+                                            </dt>
+                                            <dd>
+                                                <a href='BookDetails.html?bookId=5052'> <span class="book_title">实用C++调试指南</span></a>
+                                                <br />
+                                                <span class="book_publish">出版日期:2003年01月01日</span><br /><span style="color: red; font-weight: bold">价格：¥15.00元</span></dd>
+                                        </dl>
+                                    </td><td>
+                                        <dl id="bookNew">
+                                            <dt>
+                                               <img style="width: 80px; height: 100px" src='img/BookCovers/9787894871596.jpg' alt="" /></a>
+                                            </dt>
+                                            <dd>
+                                                <a href='BookDetails.html?bookId=5091'> <span class="book_title">2007年9月考试专...</span></a>
+                                                <br />
+                                                <span class="book_publish">出版日期:2007年06月01日</span><br /><span style="color: red; font-weight: bold">价格：¥15.00元</span></dd>
+                                        </dl>
+                                    </td>
+	</tr>
+</table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both; height: 20px"></div>
+        <!--网站底部内容开始-->
+        <div id="footer">
+            
+<link href="css/global.css" rel="stylesheet" />
+    <link href="css/layout.css" rel="stylesheet" />
+    <link href="css/template.css" rel="stylesheet" />
+    <link href="css/focus.css" rel="stylesheet" />
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/public.js"></script>
+<div class="footer_top"><a href="#" target="_parent" class="footer_dull_red">公司简介</a> | <a href="#" target="_parent" class="footer_dull_red">诚证英才</a> | <a href="#" target="_parent" class="footer_dull_red">网站联盟</a> | <a href="#" target="_parent" class="footer_dull_red">百货招商</a> | <a href="#" target="_parent" class="footer_dull_red">交易条款</a></div>
+<div class="footer_end">
+    Copyright (C) <a href="#" target="_blank">网上书店</a> 2016-2026, All Rights Reserved 
+                <img src="#" alt="版权" style="vertical-align: middle;" />
+    鲁ICP证2016888号 图书销售经营许可证
+</div>
+
+        </div>
+    
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="3885C23E" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="xjLtRfi/R91StKrsCo1TTJwNX78H3MVRq9TDpCXUXVfcxw6rg+zIaOJKnqifM0aWKURSzgvCs0rO2foy98ZlXbDOuVj3ZDwT/6F6GFzbhhcWm5AUPo0+TCmI/V/9/rSh8FG8vAFgMu/6NEZnsMchTg==" />
+</div></form>
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Firefox","requestId":"776b151488cd410fa7df3f2773ed0883"}
+</script>
+<script type="text/javascript" src="http://localhost:16604/684f63152dfd463dab384f72747561d2/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>
