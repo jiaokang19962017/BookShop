@@ -26,6 +26,7 @@
 <script type="text/javascript">
 
     $(document).ready(function () {
+        
         $.post(
             "ashx/SelectByTitle.ashx",
             {
@@ -34,7 +35,6 @@
             function (data, status) {
                 if (status == "success") {
                    
-                    
                     $("#ContentPlaceHolder1_dlBookList").html(data)
                 }
             }
@@ -84,7 +84,8 @@
              )
         }
 
-        $.post(
+                    
+                     $.post(
                        "ashx/GetBookInfoByDropDown.ashx",
                        {
                            categoryid:window.location.search.toString().slice(1)
@@ -95,6 +96,7 @@
                            }
                        }
                        )
+      
     })
 
 
@@ -109,10 +111,29 @@
         subMenu.style.display = "none";
     }
 </script>
-            <script>
-              
+          <script>
+              $(document).ready(function () {
+                  var result = window.location.search.toString().slice(1)
+                  if (result>1000) {
+                      $.post(
+                       "ashx/GetBookMinute.ashx",
+                       {
 
-            </script>
+                           newid: window.location.search.toString().slice(1)
+                       },
+                       function (data, status) {
+                           if (status == "success") {
+
+                               $(".bookList_content").html(data)
+                           }
+                       }
+                       )
+                  }
+                 
+              })
+
+
+          </script> 
 <div class="header_top">
     <div class="header_top_left">
         <span id="header1_lblUser" style="color:Red;">jiaoke</span>
@@ -258,62 +279,62 @@
                         <table id="dlCategory" cellspacing="0" style="width:100%;border-collapse:collapse;">
 	<tr>
 		<td>
-                                <div class="book_cate"><a href='CategoryList.html?categoryId=1'>
+                                <div class="book_cate"><a href='BookList.html?1'>
                                     C#高级编程1</a></div>
                             </td>
 	</tr><tr>
 		<td>
-                                <div class="book_cate"><a href='CategoryList.html?categoryId=15'>
+                                <div class="book_cate"><a href='BookList.html?15'>
                                     C C+</a></div>
                             </td>
 	</tr><tr>
 		<td>
-                                <div class="book_cate"><a href='CategoryList.html?categoryId=16'>
+                                <div class="book_cate"><a href='BookList.html?16'>
                                     VB Script</a></div>
                             </td>
 	</tr><tr>
 		<td>
-                                <div class="book_cate"><a href='CategoryList.html?categoryId=17'>
+                                <div class="book_cate"><a href='BookList.html?17'>
                                     计算机等级考试1</a></div>
                             </td>
 	</tr><tr>
 		<td>
-                                <div class="book_cate"><a href='CategoryList.html?categoryId=20'>
+                                <div class="book_cate"><a href='BookList.html?20'>
                                     计算机理论</a></div>
                             </td>
 	</tr><tr>
 		<td>
-                                <div class="book_cate"><a href='CategoryList.html?categoryId=21'>
+                                <div class="book_cate"><a href='BookList.html?21'>
                                     Java </a></div>
                             </td>
 	</tr><tr>
 		<td>
-                                <div class="book_cate"><a href='CategoryList.html?categoryId=22'>
+                                <div class="book_cate"><a href='BookList.html?22'>
                                     HTML XML</a></div>
                             </td>
 	</tr><tr>
 		<td>
-                                <div class="book_cate"><a href='CategoryList.html?categoryId=25'>
+                                <div class="book_cate"><a href='BookList.html?25'>
                                     .NET</a></div>
                             </td>
 	</tr><tr>
 		<td>
-                                <div class="book_cate"><a href='CategoryList.html?categoryId=27'>
+                                <div class="book_cate"><a href='BookList.html?27'>
                                     网站开发</a></div>
                             </td>
 	</tr><tr>
 		<td>
-                                <div class="book_cate"><a href='CategoryList.html?categoryId=29'>
+                                <div class="book_cate"><a href='BookList.html?29'>
                                     ASP.NET</a></div>
                             </td>
 	</tr><tr>
 		<td>
-                                <div class="book_cate"><a href='CategoryList.html?categoryId=31'>
+                                <div class="book_cate"><a href='BookList.html?31'>
                                     JSP</a></div>
                             </td>
 	</tr><tr>
 		<td>
-                                <div class="book_cate"><a href='CategoryList.html?categoryId=38'>
+                                <div class="book_cate"><a href='BookList.html?38'>
                                     电子商务</a></div>
                             </td>
 	</tr>

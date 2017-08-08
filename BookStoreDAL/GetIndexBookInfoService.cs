@@ -94,7 +94,7 @@ namespace BookStoreDAL
         /// <returns></returns>
         public List<Books> SelectByTitle(string title)
         {
-            string sql = string.Format("SELECT top 3 bs.id,imageName,title,author,ps.name,publishDate,ISBN,wordsCount,clicks,unitPrice,contentDescription FROM Books bs INNER JOIN Publishers ps ON bs.publisherId=ps.Id WHERE  title like '%{0}%'", title);
+            string sql = string.Format("SELECT top 3 bs.id as id,imageName,title,author,ps.name as name,publishDate,ISBN,wordsCount,clicks,unitPrice,contentDescription FROM Books bs INNER JOIN Publishers ps ON bs.publisherId=ps.Id WHERE  title like '%{0}%'", title);
             List<Books> list = new List<Books>();
             SqlDataReader dr = SqlHelper.GetDataReader(CommandType.Text, sql, null);
             while (dr.Read())
