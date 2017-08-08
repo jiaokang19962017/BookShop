@@ -27,5 +27,7 @@ namespace BookModels
         public int Clicks { get; set; }
         public string ImageType { get; set; }
         public string ImageName { get; set; }
+
+        public string PublishName { get; set; }
     }
 }

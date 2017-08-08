@@ -1152,6 +1152,10 @@
     <Content Include="WebPages\js\bootstrap.min.js" />
     <Content Include="WebPages\js\focus.js" />
     <Content Include="WebPages\js\jquery-1.7.2.min.js" />
+    <Content Include="WebPages\ashx\GetNewBookList.ashx" />
+    <Content Include="WebPages\ashx\GetSaleBookList.ashx" />
+    <Content Include="WebPages\ashx\GetBookMinute.ashx" />
+    <Content Include="WebPages\ashx\SelectByTitle.ashx" />
     <None Include="WebPages\js\jquery-1.9.1-vsdoc.js" />
     <None Include="WebPages\js\jquery-1.9.1.intellisense.js" />
     <Content Include="WebPages\js\jquery-1.9.1.js" />
@@ -1206,6 +1210,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebPages\ashx\GetBookMinute.ashx.cs">
+      <DependentUpon>GetBookMinute.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\ashx\GetNewBookList.ashx.cs">
+      <DependentUpon>GetNewBookList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\ashx\GetSaleBookList.ashx.cs">
+      <DependentUpon>GetSaleBookList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\ashx\SelectByTitle.ashx.cs">
+      <DependentUpon>SelectByTitle.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookModels\BookModels.csproj">
+      <Project>{81E5F327-EAEE-48ED-B894-AD25A5C045FB}</Project>
+      <Name>BookModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookStoreBLL\BookStoreBLL.csproj">
+      <Project>{EA7CF9ED-DA35-404D-B154-455C4EF7C585}</Project>
+      <Name>BookStoreBLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

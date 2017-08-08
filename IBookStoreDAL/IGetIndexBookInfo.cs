@@ -17,5 +17,20 @@ namespace IBookStoreDAL
         /// </summary>
         /// <returns></returns>
         List<Books> GetNewBookInfo();
+
+        /// <summary>
+        /// 获取特价图书列表
+        /// </summary>
+        /// <returns></returns>
+        List<Books> GetSaleBookInfo();
+
+        /// <summary>
+        /// 获取书籍详细信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        List<Books> GetBookMinute(int id);
+
+        List<Books> SelectByTitle(string title);
     }
 }

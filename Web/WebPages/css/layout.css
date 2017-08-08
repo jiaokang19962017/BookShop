@@ -27,7 +27,7 @@
     width: 180px;
     height: 250px;
     margin-right: 5px;
-    margin-left:5px;
+    margin-left: 5px;
     margin-top: 5px;
 }
 
@@ -72,14 +72,14 @@
 
 .book_cate {
     padding: 10px 0px 0px 10px;
-    font-size:14px;
+    font-size: 14px;
     font-weight: bold;
     border-bottom: dashed 1px #999;
-    text-align:center;
+    text-align: center;
 }
-.book_cate  {
-    
-    }
+
+.book_cate {
+}
 
 .news_list {
     border: solid 1px #999;
@@ -98,27 +98,30 @@
 
 .new_content {
     padding: 5px 0px 0px 5px;
-    font-size:14px;
+    font-size: 14px;
     height: 265px;
 }
-.new_content li {
-    line-height:30px;
-    border-bottom: 1px dashed #666;
+
+    .new_content li {
+        line-height: 30px;
+        border-bottom: 1px dashed #666;
     }
-.new_content li span {
-    color:red;    
-}
+
+        .new_content li span {
+            color: red;
+        }
+
 .main_second_left {
     float: left;
-    margin-left:1px;
-    margin-right:5px;
+    margin-left: 1px;
+    margin-right: 5px;
     width: 475px;
 }
 
 .main_second_right {
     float: right;
     /*margin-left:0px;*/
-    margin-right:3px;
+    margin-right: 3px;
     width: 475px;
 }
 
@@ -149,26 +152,32 @@
 }
 
 #bookNew {
- height:180px;
-}
-#bookNew dt {
-    float: left;
-    width: 100px;
-    margin-top: 5px;
-    height:100px;
-    text-align: center;
+    height: 180px;
 }
 
-#bookNew dd {
-    float: left;
-    width: 145px;
-    margin: 0px 0px 5px 0px;
-}
+    #bookNew dt {
+        float: left;
+        width: 100px;
+        margin-top: 5px;
+        height: 100px;
+        text-align: center;
+    }
+
+    #bookNew dd {
+        float: left;
+        width: 145px;
+        margin: 0px 0px 5px 0px;
+    }
 
 .book_title {
     color: #1965b3;
     font-size: 12px;
-    height:70px;
+    height: 70px;
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+    overflow: hidden;
+    margin-left: 10px;
 }
 
 .book_publish {
