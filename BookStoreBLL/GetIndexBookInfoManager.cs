@@ -42,9 +42,41 @@ namespace BookStoreBLL
             return gibis.GetBookMinute(id);
         }
 
+        /// <summary>
+        /// 搜索图书信息
+        /// </summary>
+        /// <param name="title"></param>
+        /// <returns></returns>
         public List<Books> SelectByTitle(string title)
         {
             return gibis.SelectByTitle(title);
+        }
+
+        /// <summary>
+        /// 通过导航栏显示详细信息
+        /// </summary>
+        /// <returns></returns>
+        public List<Books> GetNewBookByNav() {
+            return gibis.GetNewBookByNav();
+        }
+
+        /// <summary>
+        /// 通过导航栏获取打折图书信息
+        /// </summary>
+        /// <returns></returns>
+        public List<Books> GetSaleBookByNav()
+        {
+            return gibis.GetSaleBookByNav();
+        }
+
+        /// <summary>
+        /// 根据下拉栏获取书籍分类信息
+        /// </summary>
+        /// <param name="categoryId"></param>
+        /// <returns></returns>
+        public List<Books> GetBookInfoByDropDown(int categoryId)
+        {
+            return gibis.GetBookInfoByDropDown(categoryId);
         }
     }
 }

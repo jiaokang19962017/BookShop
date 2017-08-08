@@ -94,7 +94,92 @@ namespace BookStoreDAL
         /// <returns></returns>
         public List<Books> SelectByTitle(string title)
         {
-            string sql = string.Format("SELECT bs.id,imageName,title,author,ps.name,publishDate,ISBN,wordsCount,clicks,unitPrice,contentDescription FROM Books bs INNER JOIN Publishers ps ON bs.publisherId=ps.Id WHERE  title LIKE '%{0}%'", title);
+            string sql = string.Format("SELECT top 3 bs.id,imageName,title,author,ps.name,publishDate,ISBN,wordsCount,clicks,unitPrice,contentDescription FROM Books bs INNER JOIN Publishers ps ON bs.publisherId=ps.Id WHERE  title like '%{0}%'", title);
+            List<Books> list = new List<Books>();
+            SqlDataReader dr = SqlHelper.GetDataReader(CommandType.Text, sql, null);
+            while (dr.Read())
+            {
+                Books book = new Books();
+                book.Id = Convert.ToInt32(dr["id"]);
+                book.ImageName = dr["imageName"].ToString();
+                book.Title = dr["Title"].ToString();
+                book.Author = dr["author"].ToString();
+                book.PublishName = dr["name"].ToString();
+                book.PublishDate = Convert.ToDateTime(dr["publishDate"]);
+                book.ISBN = dr["ISBN"].ToString();
+                book.WordsCount = Convert.ToInt32(dr["wordsCount"]);
+                book.Clicks = Convert.ToInt32(dr["clicks"]);
+                book.UnitPrice = Convert.ToDecimal(dr["unitPrice"]);
+                book.ContentDescription = dr["contentDescription"].ToString();
+                list.Add(book);
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// 根据导航栏获取最新书籍信息
+        /// </summary>
+        /// <returns></returns>
+       public List<Books> GetNewBookByNav()
+        {
+            string sql = "SELECT top 3 bs.id,imageName,title,author,ps.name,publishDate,ISBN,wordsCount,clicks,unitPrice,contentDescription FROM Books bs INNER JOIN Publishers ps ON bs.publisherId=ps.Id WHERE  PublishDate>='2007-08-01'";
+            List<Books> list = new List<Books>();
+            SqlDataReader dr = SqlHelper.GetDataReader(CommandType.Text, sql, null);
+            while (dr.Read())
+            {
+                Books book = new Books();
+                book.Id = Convert.ToInt32(dr["id"]);
+                book.ImageName = dr["imageName"].ToString();
+                book.Title = dr["Title"].ToString();
+                book.Author = dr["author"].ToString();
+                book.PublishName = dr["name"].ToString();
+                book.PublishDate = Convert.ToDateTime(dr["publishDate"]);
+                book.ISBN = dr["ISBN"].ToString();
+                book.WordsCount = Convert.ToInt32(dr["wordsCount"]);
+                book.Clicks = Convert.ToInt32(dr["clicks"]);
+                book.UnitPrice = Convert.ToDecimal(dr["unitPrice"]);
+                book.ContentDescription = dr["contentDescription"].ToString();
+                list.Add(book);
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// 通过导航栏获取打折图书详细信息
+        /// </summary>
+        /// <returns></returns>
+       public List<Books> GetSaleBookByNav()
+        {
+            string sql = "SELECT top 3 bs.id,imageName,title,author,ps.name,publishDate,ISBN,wordsCount,clicks,unitPrice,contentDescription FROM Books bs INNER JOIN Publishers ps ON bs.publisherId=ps.Id WHERE UnitPrice<20";
+            List<Books> list = new List<Books>();
+            SqlDataReader dr = SqlHelper.GetDataReader(CommandType.Text, sql, null);
+            while (dr.Read())
+            {
+                Books book = new Books();
+                book.Id = Convert.ToInt32(dr["id"]);
+                book.ImageName = dr["imageName"].ToString();
+                book.Title = dr["Title"].ToString();
+                book.Author = dr["author"].ToString();
+                book.PublishName = dr["name"].ToString();
+                book.PublishDate = Convert.ToDateTime(dr["publishDate"]);
+                book.ISBN = dr["ISBN"].ToString();
+                book.WordsCount = Convert.ToInt32(dr["wordsCount"]);
+                book.Clicks = Convert.ToInt32(dr["clicks"]);
+                book.UnitPrice = Convert.ToDecimal(dr["unitPrice"]);
+                book.ContentDescription = dr["contentDescription"].ToString();
+                list.Add(book);
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// 根据下拉栏获取书籍分类信息
+        /// </summary>
+        /// <param name="categoryId"></param>
+        /// <returns></returns>
+        public List<Books> GetBookInfoByDropDown(int categoryId)
+        {
+            string sql = string.Format("SELECT  bs.id,imageName,title,author,ps.name,publishDate,ISBN,wordsCount,clicks,unitPrice,contentDescription FROM Books bs INNER JOIN Publishers ps ON bs.publisherId=ps.Id WHERE categoryId={0}",categoryId);
             List<Books> list = new List<Books>();
             SqlDataReader dr = SqlHelper.GetDataReader(CommandType.Text, sql, null);
             while (dr.Read())

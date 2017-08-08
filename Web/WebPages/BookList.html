@@ -24,6 +24,80 @@
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/public.js"></script>
 <script type="text/javascript">
+
+    $(document).ready(function () {
+        $.post(
+            "ashx/SelectByTitle.ashx",
+            {
+                stitle: decodeURI(window.location.search.toString().slice(1))
+            },
+            function (data, status) {
+                if (status == "success") {
+                   
+                    
+                    $("#ContentPlaceHolder1_dlBookList").html(data)
+                }
+            }
+            )
+
+        $("#header1_btnSearch").click(function () {
+            $.post(
+           "ashx/SelectByTitle.ashx",
+           {
+               stitle: $("#header1_txtKeyword").val()
+           },
+           function (data, status) {
+               if (status == "success") {
+
+                  
+                   $("#ContentPlaceHolder1_dlBookList").html(data)
+               }
+           }
+           )
+        })
+
+        var result = window.location.search.toString().slice(1);
+        if (result == 1) {
+            $.post(
+                "ashx/GetNewBookByNav.ashx",
+                {
+                },
+                function (data, status) {
+                    if (status == "success") {
+                        //alert(data)
+                        $("#ContentPlaceHolder1_dlBookList").html(data)
+                    }
+                }
+                )
+        } else if (result == 2)
+        {
+            $.post(
+             "ashx/GetSaleBookByNav.ashx",
+             {
+             },
+             function (data, status) {
+                 if (status == "success") {
+                     //alert(data)
+                     $("#ContentPlaceHolder1_dlBookList").html(data)
+                 }
+             }
+             )
+        }
+
+        $.post(
+                       "ashx/GetBookInfoByDropDown.ashx",
+                       {
+                           categoryid:window.location.search.toString().slice(1)
+                       },
+                       function (data,status) {
+                           if (status=="success") {
+                               $("#ContentPlaceHolder1_dlBookList").html(data)
+                           }
+                       }
+                       )
+    })
+
+
     function displaySubMenu(li) {
         //var subMenu = li.getElementsByTagName("ul")[0];
         var subMenu = document.getElementById("category");
@@ -35,6 +109,10 @@
         subMenu.style.display = "none";
     }
 </script>
+            <script>
+              
+
+            </script>
 <div class="header_top">
     <div class="header_top_left">
         <span id="header1_lblUser" style="color:Red;">jiaoke</span>
@@ -68,7 +146,7 @@
     </div>
     <div class="search">
         <div class="search_area">
-            <input type="submit" name="ctl00$header1$btnSearch" value="搜 索" id="header1_btnSearch" class="btn_search" />
+            <input type="button" name="ctl00$header1$btnSearch" value="搜 索" id="header1_btnSearch" class="btn_search" />
             <div class="search_select">
                 <span class="icon-search"></span>
             </div>
@@ -88,68 +166,68 @@
 	<tr>
 		<td>
                             <div class="book_cate">
-                                <li><a href='CategoryList.html?categoryId=1'>
+                                <li><a href='BookList.html?1'>
                                     C#高级编程1</a></li>
                             </div>
                         </td><td>
                             <div class="book_cate">
-                                <li><a href='CategoryList.html?categoryId=15'>
+                                <li><a href='BookList.html?15'>
                                     C C+</a></li>
                             </div>
                         </td><td>
                             <div class="book_cate">
-                                <li><a href='CategoryList.html?categoryId=16'>
+                                <li><a href='BookList.html?16'>
                                     VB Script</a></li>
                             </div>
                         </td>
 	</tr><tr>
 		<td>
                             <div class="book_cate">
-                                <li><a href='CategoryList.html?categoryId=17'>
+                                <li><a href='BookList.html?17'>
                                     计算机等级考试1</a></li>
                             </div>
                         </td><td>
                             <div class="book_cate">
-                                <li><a href='CategoryList.html?categoryId=20'>
+                                <li><a href='BookList.html?20'>
                                     计算机理论</a></li>
                             </div>
                         </td><td>
                             <div class="book_cate">
-                                <li><a href='CategoryList.html?categoryId=21'>
+                                <li><a href='BookList.html?21'>
                                     Java </a></li>
                             </div>
                         </td>
 	</tr><tr>
 		<td>
                             <div class="book_cate">
-                                <li><a href='CategoryList.html?categoryId=22'>
+                                <li><a href='BookList.html?22'>
                                     HTML XML</a></li>
                             </div>
                         </td><td>
                             <div class="book_cate">
-                                <li><a href='CategoryList.html?categoryId=25'>
+                                <li><a href='BookList.html?25'>
                                     .NET</a></li>
                             </div>
                         </td><td>
                             <div class="book_cate">
-                                <li><a href='CategoryList.html?categoryId=27'>
+                                <li><a href='BookList.html?27'>
                                     网站开发</a></li>
                             </div>
                         </td>
 	</tr><tr>
 		<td>
                             <div class="book_cate">
-                                <li><a href='CategoryList.html?categoryId=29'>
+                                <li><a href='BookList.html?29'>
                                     ASP.NET</a></li>
                             </div>
                         </td><td>
                             <div class="book_cate">
-                                <li><a href='CategoryList.html?categoryId=31'>
+                                <li><a href='BookList.html?31'>
                                     JSP</a></li>
                             </div>
                         </td><td>
                             <div class="book_cate">
-                                <li><a href='CategoryList.html?categoryId=38'>
+                                <li><a href='BookList.html?38'>
                                     电子商务</a></li>
                             </div>
                         </td>
@@ -159,8 +237,8 @@
 
             </li>
             <li> <a href="BookList.html">所有图书</a></li>
-            <li><a href="BookList.html?type=1">新书上架</a></li>
-            <li><a href="BookList.html?type=2">特价图书</a></li>
+            <li><a href="BookList.html?1">新书上架</a></li>
+            <li><a href="BookList.html?2">特价图书</a></li>
             <li><a href="#">图书资讯</a></li>
             <li><a href="#">联系我们</a></li>
         </ul>
@@ -270,180 +348,8 @@
         </div>
         <div class="bookList_content">
             <table id="ContentPlaceHolder1_dlBookList" cellspacing="0" style="width:100%;border-collapse:collapse;">
-	<!--<tr>
-		<td>
-                    <div class="bookList_content_left">
-                        <img id="ContentPlaceHolder1_dlBookList_imgCover_0" src="img/BookCovers/9787115155108.jpg" style="height:130px;width:100px;" />
-                    </div>
-                    <div class="bookList_content_right">
-                        <ul>
-                            <li class="bookList_content_bookTitle">图书名称:
-                                <a href='BookDetails.html?bookId=4942' class="blue_size">C++ Primer 习题解答（第4版）</a></li>
-                            <li>作者:蒋爱军，李师贤，梅晓勇  著</li>
-                            <li>出版社:三秦出版社</li>
-                            <li>出版时间:2007年02月01日</li>
-                            <li>图书价格:<span style="color: red; font-weight: bold">¥45.00元</span></li>
-                            <li>
-                                <p>C++ Primer(第4版)是C++大师Stanley B. Lippman丰富的实践经验和C++标准委员会原负责人J...</p>
-                            </li>
-                        </ul>
-                        <dl class="bookList_content_dd">
-                            <dd>
-                                <a style="color:white;text-decoration:none" href='BookDetails.html?bookId=4942'>
-                                    <img id="ContentPlaceHolder1_dlBookList_Image1_0" src="img/product_buy_01.gif" />
-                                    
-                                </a>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="bookList_content_bottom"></div>
-                </td>
-	</tr>-->
-    <tr>
-		<td>
-                    <div class="bookList_content_left">
-                        <img id="ContentPlaceHolder1_dlBookList_imgCover_1" src="img/BookCovers/978711515888.jpg" style="height:130px;width:100px;" />
-                    </div>
-                    <div class="bookList_content_right">
-                        <ul>
-                            <li class="bookList_content_bookTitle">图书名称:
-                                <a href='BookDetails.html?bookId=4943' class="blue_size">Effective C# 中文版</a></li>
-                            <li>作者:（美）瓦格纳  著，李建忠  译</li>
-                            <li>出版社:人民邮电出版社</li>
-                            <li>出版时间:2007年05月01日</li>
-                            <li>图书价格:<span style="color: red; font-weight: bold">¥49.00元</span></li>
-                            <li>
-                                <p><p>本书围绕一些关于C#和.NET的重要主题，包括C#语言元素、.NET资源管理、使用C#表达设计、创建二进制组件和使...</p>
-                            </li>
-                        </ul>
-                        <dl class="bookList_content_dd">
-                            <dd>
-                                <a style="color:white;text-decoration:none" href='BookDetails.html?bookId=4943'>
-                                    <img id="ContentPlaceHolder1_dlBookList_Image1_1" src="img/product_buy_01.gif" />
-                                    
-                                </a>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="bookList_content_bottom"></div>
-                </td>
-	</tr>
-    <tr>
-		<td>
-                    <div class="bookList_content_left">
-                        <img id="ContentPlaceHolder1_dlBookList_imgCover_2" src="img/BookCovers/9787111128069.jpg" style="height:130px;width:100px;" />
-                    </div>
-                    <div class="bookList_content_right">
-                        <ul>
-                            <li class="bookList_content_bookTitle">图书名称:
-                                <a href='BookDetails.html?bookId=4944' class="blue_size">C程序设计语言（第2版·新版）</a></li>
-                            <li>作者:（美）克尼汉，（美）里奇 著，徐宝文，李志 译</li>
-                            <li>出版社:机械工业出版社</li>
-                            <li>出版时间:2004年01月01日</li>
-                            <li>图书价格:<span style="color: red; font-weight: bold">¥30.00元</span></li>
-                            <li>
-                                <p>本书是由C语言的设计者Brian W.Kernighan和Dennis M.Ritchie编写的一部介绍标准C语言及其程...</p>
-                            </li>
-                        </ul>
-                        <dl class="bookList_content_dd">
-                            <dd>
-                                <a style="color:white;text-decoration:none" href='BookDetails.html?bookId=4944'>
-                                    <img id="ContentPlaceHolder1_dlBookList_Image1_2" src="img/product_buy_01.gif" />
-                                    
-                                </a>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="bookList_content_bottom"></div>
-                </td>
-	</tr>
-    <tr>
-		<td>
-                    <div class="bookList_content_left">
-                        <img id="ContentPlaceHolder1_dlBookList_imgCover_3" src="img/BookCovers/9787115134165.jpg" style="height:130px;width:100px;" />
-                    </div>
-                    <div class="bookList_content_right">
-                        <ul>
-                            <li class="bookList_content_bookTitle">图书名称:
-                                <a href='BookDetails.html?bookId=4945' class="blue_size">C++Primer Plus（第五版）中文版</a></li>
-                            <li>作者:[美]普拉塔（Prata,S.）  著，孙建春，韦强  译</li>
-                            <li>出版社:人民邮电出版社</li>
-                            <li>出版时间:2005年05月01日</li>
-                            <li>图书价格:<span style="color: red; font-weight: bold">¥72.00元</span></li>
-                            <li>
-                                <p>C++是在C语言基础上开发的一种集面向对象编程、通用编程和传统的过程化编程于一体的编程语言，是C语言的超集。本书是根据2...</p>
-                            </li>
-                        </ul>
-                        <dl class="bookList_content_dd">
-                            <dd>
-                                <a style="color:white;text-decoration:none" href='BookDetails.html?bookId=4945'>
-                                    <img id="ContentPlaceHolder1_dlBookList_Image1_3" src="img/product_buy_01.gif" />
-                                    
-                                </a>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="bookList_content_bottom"></div>
-                </td>
-	</tr>
-    <tr>
-		<td>
-                    <div class="bookList_content_left">
-                        <img id="ContentPlaceHolder1_dlBookList_imgCover_4" src="img/BookCovers/9787302114642.jpg" style="height:130px;width:100px;" />
-                    </div>
-                    <div class="bookList_content_right">
-                        <ul>
-                            <li class="bookList_content_bookTitle">图书名称:
-                                <a href='BookDetails.html?bookId=4947' class="blue_size">C++程序设计教程（第二版）</a></li>
-                            <li>作者:钱能  著</li>
-                            <li>出版社:清华大学出版社</li>
-                            <li>出版时间:2005年09月01日</li>
-                            <li>图书价格:<span style="color: red; font-weight: bold">¥39.50元</span></li>
-                            <li>
-                                <p>本书是《C++程序设计教程》的第二版。然而从指导思想、内容结构、写作特点等方面，都以全新的面貌呈现于读者。全书全部重新执...</p>
-                            </li>
-                        </ul>
-                        <dl class="bookList_content_dd">
-                            <dd>
-                                <a style="color:white;text-decoration:none" href='BookDetails.html?bookId=4947'>
-                                    <img id="ContentPlaceHolder1_dlBookList_Image1_4" src="img/product_buy_01.gif" />
-                                    
-                                </a>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="bookList_content_bottom"></div>
-                </td>
-	</tr>
-    <tr>
-		<td>
-                    <div class="bookList_content_left">
-                        <img id="ContentPlaceHolder1_dlBookList_imgCover_5" src="img/BookCovers/9787560924182.jpg" style="height:130px;width:100px;" />
-                    </div>
-                    <div class="bookList_content_right">
-                        <ul>
-                            <li class="bookList_content_bookTitle">图书名称:
-                                <a href='BookDetails.html?bookId=4948' class="blue_size">深度探索 C++ 对象模型</a></li>
-                            <li>作者:（美）Stanley B. Lippman  著，侯捷  译</li>
-                            <li>出版社:化学工业出版社</li>
-                            <li>出版时间:2001年05月01日</li>
-                            <li>图书价格:<span style="color: red; font-weight: bold">¥54.00元</span></li>
-                            <li>
-                                <p>本书重点：探索“对象导向程序所支持的C++对象模型”下的程序行为。对于“对象导向性质之基础实现技术”以及“各种性质背后的...</p>
-                            </li>
-                        </ul>
-                        <dl class="bookList_content_dd">
-                            <dd>
-                                <a style="color:white;text-decoration:none" href='BookDetails.html?bookId=4948'>
-                                    <img id="ContentPlaceHolder1_dlBookList_Image1_5" src="img/product_buy_01.gif" />
-                                    
-                                </a>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="bookList_content_bottom"></div>
-                </td>
-	</tr>
+
+
 </table>
         </div>
         <div class="bookList_paging">

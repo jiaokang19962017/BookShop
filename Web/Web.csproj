@@ -1156,6 +1156,9 @@
     <Content Include="WebPages\ashx\GetSaleBookList.ashx" />
     <Content Include="WebPages\ashx\GetBookMinute.ashx" />
     <Content Include="WebPages\ashx\SelectByTitle.ashx" />
+    <Content Include="WebPages\ashx\GetNewBookByNav.ashx" />
+    <Content Include="WebPages\ashx\GetSaleBookByNav.ashx" />
+    <Content Include="WebPages\ashx\GetBookInfoByDropDown.ashx" />
     <None Include="WebPages\js\jquery-1.9.1-vsdoc.js" />
     <None Include="WebPages\js\jquery-1.9.1.intellisense.js" />
     <Content Include="WebPages\js\jquery-1.9.1.js" />
@@ -1210,11 +1213,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebPages\ashx\GetBookInfoByDropDown.ashx.cs">
+      <DependentUpon>GetBookInfoByDropDown.ashx</DependentUpon>
+    </Compile>
     <Compile Include="WebPages\ashx\GetBookMinute.ashx.cs">
       <DependentUpon>GetBookMinute.ashx</DependentUpon>
     </Compile>
+    <Compile Include="WebPages\ashx\GetNewBookByNav.ashx.cs">
+      <DependentUpon>GetNewBookByNav.ashx</DependentUpon>
+    </Compile>
     <Compile Include="WebPages\ashx\GetNewBookList.ashx.cs">
       <DependentUpon>GetNewBookList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\ashx\GetSaleBookByNav.ashx.cs">
+      <DependentUpon>GetSaleBookByNav.ashx</DependentUpon>
     </Compile>
     <Compile Include="WebPages\ashx\GetSaleBookList.ashx.cs">
       <DependentUpon>GetSaleBookList.ashx</DependentUpon>
