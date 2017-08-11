@@ -44,6 +44,7 @@
     <Compile Include="Categories.cs" />
     <Compile Include="OrderBook.cs" />
     <Compile Include="Orders.cs" />
+    <Compile Include="OrdersShow.cs" />
     <Compile Include="Publishers.cs" />
     <Compile Include="UserRoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

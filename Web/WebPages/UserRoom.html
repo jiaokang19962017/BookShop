@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
 
@@ -16,8 +16,23 @@
                     $(".leftnav ul li a").removeClass("on");
                     $(this).addClass("on");
                 });
+
+                $.post(
+               "ashx/Ifsesson.ashx",
+               {
+               },
+               function (data, status) {
+                   if (status == "success") {
+                       $("#labname").text(data);
+                       $("#ContentPlaceHolder1_labname").text(data);
+                   }
+               }
+               )
+
+
             });
         </script>
+    
         <style>
             .menu-top {
                 background: url(img/bg6.jpg);
@@ -59,7 +74,7 @@ function __doPostBack(eventTarget, eventArgument) {
                 </h1>
             </div>
             <div class="head-l">
-                <a class="button button-little bg-green" href="../Book/Index.html"><span class="icon-home"></span>前台首页</a>
+                <a class="button button-little bg-green" href="index.html"><span class="icon-home"></span>前台首页</a>
                 &nbsp;&nbsp;<a href="../Book/BookCar.html" class="button button-little bg-blue"><span class="icon-wrench"></span> 购物车</a>
                 &nbsp;&nbsp;
                 <a id="lbtnExit" class="button button-little bg-red" href="javascript:__doPostBack(&#39;ctl00$lbtnExit&#39;,&#39;&#39;)">退出登录</a>

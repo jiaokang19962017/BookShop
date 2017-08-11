@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
 	用户注册
@@ -8,35 +8,49 @@
     <script src="js/register.js"></script>
     <script src="js/address.js"></script>
     <script>
-        //$(function () {
-        //    for (var i = 0; i < provinceList.length; i++) {
-        //        var option = $("<option>" + provinceList[i].name + "</option>");
-        //        option.prop("cities", provinceList[i].cityList);
-        //        $("#province").append(option);
-        //    }
-        //    changeProvince();
-        //    changeCity();
-        //    $("#province").on("change", changeProvince);
-        //    $("#city").on("change", changeCity);
-        //});
-        //function changeProvince() {
-        //    $("#city").empty();
-        //    var cities = $("#province").find("option:selected").prop("cities");
-        //    for (var i = 0; i < cities.length; i++) {
-        //        var option = $("<option>" + cities[i].name + "</option>");
-        //        option.prop("area", cities[i].areaList);
-        //        $("#city").append(option);
-        //    }
-        //    changeCity();
-        //}
-        //function changeCity() {
-        //    $("#area").empty();
-        //    var area = $("#city").find("option:selected").prop("area");
-        //    for (var i = 0; i < area.length; i++) {
-        //        var option = $("<option>" + area[i] + "</option>");
-        //        $("#area").append(option);
-        //    }
-        //}
+        $(document).ready(function(){
+            $("#btnOK").click(function(){
+                $.post(
+                    "ashx/AddUserASHX.ashx",
+                    {
+                        loginid:$("#txtLoginId").val(),
+                        loginpwd:$("#txtPwd").val(),
+                        name:$("#txtName").val(),
+                        address:$("#txtAddress").val(),
+                        phone:$("#txtPhone").val(),
+                        mail:$("#txtMail").val()
+                    },
+                    function(data,status){
+                        if (status=="success") {
+                            if(data==1){
+                                alert("成功")
+                                window.location.href="UserLogin.html"
+                            }
+                        }                   
+                    }
+
+                    )
+            })
+
+            $("#txtLoginId").blur(function(){
+                var id = $("#txtLoginId").val();
+                $.post(
+                    "ashx/GetLoginIdASHX.ashx",
+                    {
+                        userid:$("#txtLoginId").val()
+                    },
+                    function(data,status){
+                        if (status=="success") {
+                           
+                            if(id==data){
+                            alert("用户名已存在,请重新输入")
+                            }
+                        }
+                    }
+                    )
+            })
+        })
+
     </script>
 
 </head>
@@ -143,7 +157,7 @@ function __doPostBack(eventTarget, eventArgument) {
                             </div>
                         </div>
                         <div style="padding: 10px 90px 30px 100px;">
-                            <input type="submit" name="btnOK" value="立马注册" onclick="return CheckAll();" id="btnOK" class="button bg-main" />
+                            <input type="button" name="btnOK" value="立马注册" onclick="return CheckAll();" id="btnOK" class="button bg-main" />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <a id="lbtnBack" class="button bg-red" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;lbtnBack&quot;, &quot;&quot;, false, &quot;&quot;, &quot;../Book/Index.html&quot;, false, true))">返回首页</a>
                         </div>

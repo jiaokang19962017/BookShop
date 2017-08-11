@@ -129,14 +129,24 @@
                        }
                        )
                   }
+                  $.post(
+                        "ashx/Ifsesson.ashx",
+                        {},
+                        function (data, status) {
+                            if (status == "success") {
+                                $("#header1_lblUser").text(data);
+                            }
+                        }
+                        )
                  
+
               })
 
 
           </script> 
 <div class="header_top">
     <div class="header_top_left">
-        <span id="header1_lblUser" style="color:Red;">jiaoke</span>
+        <span id="header1_lblUser" style="color:Red;"></span>
         您好,欢迎光临! [  <a href="../User/UserRegister.html">免费注册 </a>]
                        <span>&nbsp;<label id="lblTime" style="color: red;"></label></span>
     </div>

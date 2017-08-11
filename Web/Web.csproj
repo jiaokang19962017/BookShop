@@ -1159,6 +1159,13 @@
     <Content Include="WebPages\ashx\GetNewBookByNav.ashx" />
     <Content Include="WebPages\ashx\GetSaleBookByNav.ashx" />
     <Content Include="WebPages\ashx\GetBookInfoByDropDown.ashx" />
+    <Content Include="WebPages\ashx\AddUserASHX.ashx" />
+    <Content Include="WebPages\ashx\GetLoginIdASHX.ashx" />
+    <Content Include="WebPages\ashx\UserLoadASHX.ashx" />
+    <Content Include="WebPages\ashx\Ifsesson.ashx" />
+    <Content Include="WebPages\ashx\GetUserInfoByIdASHX.ashx" />
+    <Content Include="WebPages\ashx\UpdateUserInfoASHX.ashx" />
+    <Content Include="WebPages\ashx\GetOrderInfoASHX.ashx" />
     <None Include="WebPages\js\jquery-1.9.1-vsdoc.js" />
     <None Include="WebPages\js\jquery-1.9.1.intellisense.js" />
     <Content Include="WebPages\js\jquery-1.9.1.js" />
@@ -1213,11 +1220,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebPages\ashx\AddUserASHX.ashx.cs">
+      <DependentUpon>AddUserASHX.ashx</DependentUpon>
+    </Compile>
     <Compile Include="WebPages\ashx\GetBookInfoByDropDown.ashx.cs">
       <DependentUpon>GetBookInfoByDropDown.ashx</DependentUpon>
     </Compile>
     <Compile Include="WebPages\ashx\GetBookMinute.ashx.cs">
       <DependentUpon>GetBookMinute.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\ashx\GetLoginIdASHX.ashx.cs">
+      <DependentUpon>GetLoginIdASHX.ashx</DependentUpon>
     </Compile>
     <Compile Include="WebPages\ashx\GetNewBookByNav.ashx.cs">
       <DependentUpon>GetNewBookByNav.ashx</DependentUpon>
@@ -1225,14 +1238,29 @@
     <Compile Include="WebPages\ashx\GetNewBookList.ashx.cs">
       <DependentUpon>GetNewBookList.ashx</DependentUpon>
     </Compile>
+    <Compile Include="WebPages\ashx\GetOrderInfoASHX.ashx.cs">
+      <DependentUpon>GetOrderInfoASHX.ashx</DependentUpon>
+    </Compile>
     <Compile Include="WebPages\ashx\GetSaleBookByNav.ashx.cs">
       <DependentUpon>GetSaleBookByNav.ashx</DependentUpon>
     </Compile>
     <Compile Include="WebPages\ashx\GetSaleBookList.ashx.cs">
       <DependentUpon>GetSaleBookList.ashx</DependentUpon>
     </Compile>
+    <Compile Include="WebPages\ashx\GetUserInfoByIdASHX.ashx.cs">
+      <DependentUpon>GetUserInfoByIdASHX.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\ashx\Ifsesson.ashx.cs">
+      <DependentUpon>Ifsesson.ashx</DependentUpon>
+    </Compile>
     <Compile Include="WebPages\ashx\SelectByTitle.ashx.cs">
       <DependentUpon>SelectByTitle.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\ashx\UpdateUserInfoASHX.ashx.cs">
+      <DependentUpon>UpdateUserInfoASHX.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\ashx\UserLoadASHX.ashx.cs">
+      <DependentUpon>UserLoadASHX.ashx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

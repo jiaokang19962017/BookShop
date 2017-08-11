@@ -40,7 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAddUserInfo.cs" />
     <Compile Include="IGetIndexBookInfo.cs" />
+    <Compile Include="IGetOrderInfo.cs" />
+    <Compile Include="IGetUserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

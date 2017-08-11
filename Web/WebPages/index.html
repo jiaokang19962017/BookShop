@@ -76,7 +76,29 @@
 
                 })
             </script>
+            <script>
+                $(document).ready(function () {
+                    //function GetQueryString(name) {
+                    //    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                    //    var r = window.location.search.substr(1).match(reg);
+                    //    if (r != null) return unescape(r[2]); return null;
+                    //}
+                    //$("#header1_lblUser").text(GetQueryString("userid"));
+                    //var userid = GetQueryString("userid");
+                    $.post(
+                        "ashx/Ifsesson.ashx",
+                        {},
+                        function (data,status) {
+                            if (status=="success") {
+                                $("#header1_lblUser").text(data);
+                            }
+                        }
+                        )
 
+
+                })
+
+            </script>
             <div class="header_top">
                 <div class="header_top_left">
                     <span id="header1_lblUser" style="color:Red;"></span>
